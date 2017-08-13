@@ -1,0 +1,51 @@
+*{
+    padding:0px;
+    margin: 0px;
+    font-family: Helvetica;
+}
+body{
+    background: url('images/img.png');
+}
+.jumbotron h1{
+    color:red;
+}
+.jumbotron p
+{
+    color :black;
+}
+.tbmn{
+    margin-left: 600px;
+}
+.tbcn{
+    margin-left: 500px;
+}
+.f1{
+    color: blue;
+}
+.f2{
+    color: blue;
+}
+.f2{
+    color: blue;
+}
+footer{
+    height: 50px;
+    clear: both;
+    background: black; 
+    border-radius: 4px;
+    border: solid 1px #ccc;
+      margin-left: 200px;
+}
+footer p{
+    color: white;
+    padding-top: 15px;
+  
+}
+#wel{
+    background-color: red;
+    color: white;
+}
+#logout{
+    background-color: red;
+    font-weight:600;
+}

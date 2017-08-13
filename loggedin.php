@@ -1,0 +1,38 @@
+<?php
+
+$e=$_POST['email'];
+$p=$_POST['password'];
+$connection=mysqli_connect("localhost","root","root","project");
+$query="SELECT id, email, fname, lname, password FROM users where email='$e'";
+$result=mysqli_query($connection,$query);
+if(mysqli_num_rows($result)==1)
+{
+    while($row=mysqli_fetch_assoc($result))
+    {
+        $id=$row['id'];
+        $fn=$row['fname'];
+        $ln=$row['lname'];
+        $pass=$row['password'];
+        $em=$row['email'];
+        $id=$row['id'];
+        if(password_verify($p,$pass))
+        {
+            session_start();
+            $_SESSION['ema']=$em;
+            $_SESSION['fna']=$fn;
+            $_SESSION['lna']=$ln;
+            $_SESSION['id']=$id;
+            header("Location:profile.php");
+        }
+        else
+        {
+            header("Location:wrongdetails.php");
+        }
+    }
+}
+else
+{
+    header("Location:wrongdetails.php");
+}
+mysqli_close($connection);
+?>
